@@ -3,16 +3,16 @@
 ## Objective
 Create four ordinary IAM users and two IAM groups. Add two users to each group so the later labs can demonstrate how group-based permissions work.
 
-## Design
+## Sample Employee Directory
 
-| IAM user | IAM group | Purpose |
-| --- | --- | --- |
-| `cloud-audit-user` | `Cloud-Audit-Readers` | Read-only review |
-| `cloud-network-user` | `Cloud-Audit-Readers` | Read-only network review |
-| `cloud-storage-user` | `Cloud-S3-Operators` | Work with objects in a test S3 bucket |
-| `cloud-app-user` | `Cloud-S3-Operators` | Additional storage operator test identity |
+| Employee name | Suggested username | IAM group | Department |
+| --- | --- | --- | --- |
+| James Wilson | `jwilson` | `Cloud-Audit-Readers` | Finance |
+| Emily Carter | `ecarter` | `Cloud-Audit-Readers` | Compliance |
+| Michael Rodriguez | `mrodriguez` | `Cloud-S3-Operators` | IT |
+| Sophia Martinez | `smartinez` | `Cloud-S3-Operators` | Development |
 
-These are standard IAM users for learning group membership, not IAM roles or service identities.
+Use these as display names and suggested usernames for ordinary human IAM users. Adapt usernames if they already exist in your AWS account. These are not IAM roles or service identities.
 
 ## Steps
 
@@ -21,11 +21,11 @@ These are standard IAM users for learning group membership, not IAM roles or ser
 3. Create `Cloud-Audit-Readers`. Do not attach a policy yet.
 4. Repeat to create `Cloud-S3-Operators`.
 5. Open **IAM → Users → Create user**.
-6. Create `cloud-audit-user` and `cloud-network-user`.
-7. Create `cloud-storage-user` and `cloud-app-user`.
+6. Create James Wilson (`jwilson`) and Emily Carter (`ecarter`).
+7. Create Michael Rodriguez (`mrodriguez`) and Sophia Martinez (`smartinez`).
 8. Configure console access only if required for the lab. Follow the account's password and MFA requirements; never store passwords in this repository.
-9. Add `cloud-audit-user` and `cloud-network-user` to `Cloud-Audit-Readers`.
-10. Add `cloud-storage-user` and `cloud-app-user` to `Cloud-S3-Operators`.
+9. Add James Wilson and Emily Carter to `Cloud-Audit-Readers`.
+10. Add Michael Rodriguez and Sophia Martinez to `Cloud-S3-Operators`.
 11. Require MFA for interactive test access where supported.
 
 ## Validation
