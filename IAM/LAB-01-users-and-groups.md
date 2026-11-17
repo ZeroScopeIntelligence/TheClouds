@@ -6,29 +6,30 @@ Prepare four ordinary human user identities and two Google Groups, then add two 
 ## Important Identity Model
 Google Cloud IAM does not create ordinary human user accounts inside a project. User identities and Google Groups are managed through Google Workspace or Cloud Identity. Cloud IAM grants roles to these group principals in Lab 02.
 
-If you only have a personal Google account without a managed organization, group creation through the Admin console may not be available. Do not invent email addresses or create identities outside an account/domain you control.
+If you only have a personal Google account without a managed organization, group creation through the Admin console may not be available. Use a managed domain and identities you are authorized to administer.
 
-## Design
+## Sample Employee Directory
 
-| User identity | Google Group | Purpose |
-| --- | --- | --- |
-| `cloud-audit-user` | `cloud-project-viewers` | Read-only project access |
-| `cloud-network-user` | `cloud-project-viewers` | Read-only network review |
-| `cloud-storage-user` | `cloud-storage-operators` | Object access to a test bucket |
-| `cloud-app-user` | `cloud-storage-operators` | Additional storage operator test identity |
+| Employee name | Suggested username | Google Group | Department |
+| --- | --- | --- | --- |
+| James Wilson | `jwilson` | `cloud-project-viewers` | Finance |
+| Emily Carter | `ecarter` | `cloud-project-viewers` | Compliance |
+| Michael Rodriguez | `mrodriguez` | `cloud-storage-operators` | IT |
+| Sophia Martinez | `smartinez` | `cloud-storage-operators` | Development |
 
-These are standard human user accounts managed by Google Workspace or Cloud Identity, not service accounts.
+These are standard human user accounts managed by Google Workspace or Cloud Identity, not service accounts. Create the corresponding email addresses using a domain managed by your organization; the usernames are suggestions.
 
 ## Steps
 
 1. Sign in to the [Google Admin console](https://admin.google.com/) with an authorized administrator.
-2. Open **Directory → Users** and create four dedicated lab users, or identify four existing test users you are authorized to manage. Use your own managed domain; the names above are suggested usernames, not email addresses.
-3. Open **Directory → Groups → Create group**.
-4. Create `cloud-project-viewers`.
-5. Repeat to create `cloud-storage-operators`.
-6. Open `cloud-project-viewers`, choose **Add members**, and add `cloud-audit-user` and `cloud-network-user`.
-7. Open `cloud-storage-operators` and add `cloud-storage-user` and `cloud-app-user`.
-8. Review group visibility and posting settings. Do not make groups public for this exercise.
+2. Open **Directory → Users** and create four dedicated lab users: James Wilson (`jwilson`), Emily Carter (`ecarter`), Michael Rodriguez (`mrodriguez`), and Sophia Martinez (`smartinez`). Use your managed domain for their email addresses.
+3. Follow your organization's password and sign-in requirements. Never place passwords in this repository.
+4. Open **Directory → Groups → Create group**.
+5. Create `cloud-project-viewers`.
+6. Repeat to create `cloud-storage-operators`.
+7. Open `cloud-project-viewers`, choose **Add members**, and add James Wilson and Emily Carter.
+8. Open `cloud-storage-operators` and add Michael Rodriguez and Sophia Martinez.
+9. Review group visibility and posting settings. Do not make groups public for this exercise.
 
 ## Validation
 Confirm both groups exist and each contains the two intended test users. No Cloud IAM roles are granted yet; Lab 02 handles permissions.
