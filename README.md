@@ -90,6 +90,24 @@ Build practical experience with Google Cloud services and cloud infrastructure.
 
 ---
 
+## Shared IAM Practice Directory
+
+The IAM exercises across the AWS, Azure, and Google Cloud branches use the same sample employee directory so permissions can be compared consistently.
+
+| Employee name | Suggested username | Department | Access group |
+| --- | --- | --- | --- |
+| James Wilson | `jwilson` | Finance | Audit / resource readers |
+| Emily Carter | `ecarter` | Compliance | Audit / resource readers |
+| Michael Rodriguez | `mrodriguez` | IT | Storage operators |
+| Sophia Martinez | `smartinez` | Development | Storage operators |
+
+These are fictional training identities for documentation and lab practice. Create them only in cloud tenants or organizations you are authorized to manage, using usernames and email domains available in that environment. They are ordinary human users, not service accounts.
+
+The provider-specific group names are:
+- **AWS:** `Cloud-Audit-Readers` and `Cloud-S3-Operators`
+- **Azure:** `ZS-Resource-Readers` and `ZS-Storage-Contributors`
+- **Google Cloud:** `cloud-project-viewers` and `cloud-storage-operators`
+
 ## Learning Areas
 
 Labs and projects will be organized around these core topics:
