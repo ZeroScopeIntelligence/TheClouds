@@ -1,14 +1,18 @@
 # Lab 01: Create IAM Users, Groups, and Membership
 
 ## Objective
-Create two lab IAM users, two IAM groups, and add each user to the appropriate group.
+Create four ordinary IAM users and two IAM groups. Add two users to each group so the later labs can demonstrate how group-based permissions work.
 
 ## Design
 
-| User | Group | Purpose |
+| IAM user | IAM group | Purpose |
 | --- | --- | --- |
 | `cloud-audit-user` | `Cloud-Audit-Readers` | Read-only review |
-| `cloud-storage-user` | `Cloud-S3-Operators` | Limited access to a test S3 bucket |
+| `cloud-network-user` | `Cloud-Audit-Readers` | Read-only network review |
+| `cloud-storage-user` | `Cloud-S3-Operators` | Work with objects in a test S3 bucket |
+| `cloud-app-user` | `Cloud-S3-Operators` | Additional storage operator test identity |
+
+These are standard IAM users for learning group membership, not IAM roles or service identities.
 
 ## Steps
 
@@ -17,16 +21,18 @@ Create two lab IAM users, two IAM groups, and add each user to the appropriate g
 3. Create `Cloud-Audit-Readers`. Do not attach a policy yet.
 4. Repeat to create `Cloud-S3-Operators`.
 5. Open **IAM → Users → Create user**.
-6. Create `cloud-audit-user`. Configure console access only if required for this lab and follow the account's password and MFA requirements.
-7. Add the user to `Cloud-Audit-Readers` during creation, or open the group and add the user afterward.
-8. Repeat for `cloud-storage-user`, adding it to `Cloud-S3-Operators`.
-9. Require MFA for interactive test access where supported.
+6. Create `cloud-audit-user` and `cloud-network-user`.
+7. Create `cloud-storage-user` and `cloud-app-user`.
+8. Configure console access only if required for the lab. Follow the account's password and MFA requirements; never store passwords in this repository.
+9. Add `cloud-audit-user` and `cloud-network-user` to `Cloud-Audit-Readers`.
+10. Add `cloud-storage-user` and `cloud-app-user` to `Cloud-S3-Operators`.
+11. Require MFA for interactive test access where supported.
 
 ## Validation
 
 - Confirm both groups exist.
-- Open each group and verify its intended user is a member.
-- Open each user and confirm group membership.
+- Confirm each group has its two intended members.
+- Open each user and verify its group membership.
 - No group policies are attached yet; Lab 02 adds them.
 
 ## Security Notes
