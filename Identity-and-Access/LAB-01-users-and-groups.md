@@ -3,16 +3,16 @@
 ## Objective
 Create four ordinary cloud-only Microsoft Entra ID test users and two security groups. Add two users to each group.
 
-## Design
+## Sample Employee Directory
 
-| Test user | Security group | Purpose |
-| --- | --- | --- |
-| `cloud-audit-user` | `ZS-Resource-Readers` | Read resource configuration |
-| `cloud-network-user` | `ZS-Resource-Readers` | Read-only network review |
-| `cloud-storage-user` | `ZS-Storage-Contributors` | Work with blob data in a test storage account |
-| `cloud-app-user` | `ZS-Storage-Contributors` | Additional storage operator test identity |
+| Employee name | Suggested username | Security group | Department |
+| --- | --- | --- | --- |
+| James Wilson | `jwilson` | `ZS-Resource-Readers` | Finance |
+| Emily Carter | `ecarter` | `ZS-Resource-Readers` | Compliance |
+| Michael Rodriguez | `mrodriguez` | `ZS-Storage-Contributors` | IT |
+| Sophia Martinez | `smartinez` | `ZS-Storage-Contributors` | Development |
 
-These are standard human user identities, not service principals or managed identities.
+These are standard human user identities, not service principals or managed identities. Use your tenant's verified domain when creating each user's sign-in name; the usernames above are suggestions.
 
 ## Prerequisites
 An authorized Entra tenant, permission to create users and groups, and permission to assign Azure RBAC roles in Lab 02. Use a dedicated non-production tenant where possible.
@@ -28,10 +28,10 @@ An authorized Entra tenant, permission to create users and groups, and permissio
 ## Steps: Create Users
 
 1. Navigate to **Identity → Users → All users → New user → Create new user**.
-2. Create four dedicated test users: `cloud-audit-user`, `cloud-network-user`, `cloud-storage-user`, and `cloud-app-user`. Use approved test UPNs in your tenant.
+2. Create James Wilson (`jwilson`), Emily Carter (`ecarter`), Michael Rodriguez (`mrodriguez`), and Sophia Martinez (`smartinez`). Set their display names and use sign-in names under your tenant's verified domain.
 3. Follow tenant password and sign-in requirements. Never place passwords in this repository.
-4. Open **Groups → All groups → ZS-Resource-Readers → Members → Add members** and add `cloud-audit-user` and `cloud-network-user`.
-5. Open **ZS-Storage-Contributors → Members → Add members** and add `cloud-storage-user` and `cloud-app-user`.
+4. Open **Groups → All groups → ZS-Resource-Readers → Members → Add members** and add James Wilson and Emily Carter.
+5. Open **ZS-Storage-Contributors → Members → Add members** and add Michael Rodriguez and Sophia Martinez.
 
 ## Validation
 Open each group and verify it contains the two intended members. No Azure resource role is assigned in this lab; that occurs in Lab 02.
