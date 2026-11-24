@@ -45,6 +45,30 @@ You can create a group directly from the IAM console and add users while creatin
 
 After the group is created, open **IAM → User groups → IT** and verify its members and attached policies. Group membership gives users the group's permissions, so review both before adding users.
 
+## Configure the AWS Account Password Policy
+
+You can set an account-wide password policy from IAM Account settings. This policy applies to IAM users in the AWS account.
+
+1. In the AWS Management Console, search for **IAM** and open the IAM service.
+2. In the IAM navigation pane, select **Account settings**.
+3. Find **Password policy** and select **Edit**.
+4. Choose **Custom** to configure the password requirements.
+5. Set the minimum password length to **12 characters**.
+6. Under **Password strength**, select all available complexity options:
+   - Require at least one uppercase letter
+   - Require at least one lowercase letter
+   - Require at least one number
+   - Require at least one non-alphanumeric character (special character)
+7. Under **Other requirements**:
+   - Enable **Password expiration** and set it to **60 days**.
+   - Enable **Allow users to change their own password**.
+   - Enable **Prevent password reuse**. If the console asks for a number of previous passwords to remember, choose the value specified by your lab or organization.
+8. Review the settings and save the password policy.
+
+**Verify the policy:** Return to **IAM → Account settings → Password policy** and confirm the minimum length, all password-strength options, 60-day expiration, user self-service password changes, and password reuse prevention are enabled.
+
+**Security note:** This is an account-wide policy for IAM users; it does not replace MFA. Follow any stronger organizational requirements. Password expiration is included here as a lab configuration requirement; real organizations should set expiration rules according to their security policy and current guidance.
+
 ## Add or Change Permissions on an Existing IAM Group
 
 After creating a group, you can return to it later to attach additional policies:
