@@ -34,6 +34,42 @@ These are standard human user accounts managed by Google Workspace or Cloud Iden
 ## Validation
 Confirm both groups exist and each contains the two intended test users. No Cloud IAM roles are granted yet; Lab 02 handles permissions.
 
+
+## Expanded fictional company directory
+
+Use this fictional roster to practice department-based identity administration. These are sample names and usernames only; check for naming conflicts and use your provider's required sign-in format.
+
+| Employee | Username | Department | Group |
+|---|---|---|---|
+| Olivia Bennett | `obennett` | Human Resources | `hr-readers` |
+| Ethan Brooks | `ebrooks` | Human Resources | `hr-staff` |
+| Maya Patel | `mpatel` | Sales | `sales-users` |
+| Noah Thompson | `nthompson` | Sales | `sales-users` |
+| Ava Garcia | `agarcia` | Finance | `finance-readers` |
+| Liam Chen | `lchen` | Finance | `finance-analysts` |
+| Sophia Martinez | `smartinez` | IT | `it-operators` |
+| James Wilson | `jwilson` | IT | `it-auditors` |
+| Isabella Rivera | `irivera` | Development | `dev-engineers` |
+| Lucas Kim | `lkim` | Development | `dev-engineers` |
+| Mia Johnson | `mjohnson` | Support | `support-readers` |
+| Daniel Lewis | `dlewis` | Support | `support-operators` |
+
+Create each distinct group in the table, create the 12 test users, and add each user to the group shown. Never store passwords, API keys, access keys, or tokens in this repository.
+
+### Suggested access boundaries
+
+- **HR:** access only to dedicated HR lab resources; do not grant access to real employee records.
+- **Sales:** application-specific access to a dedicated sales test resource.
+- **Finance:** read-only or analytics access to isolated finance test resources.
+- **IT:** separate operational and audit groups; audit membership must not imply administrative rights.
+- **Development:** permissions scoped to a dedicated development environment.
+- **Support:** diagnostic access limited to approved support resources.
+
+Do not attach broad administrator permissions to department groups. Apply the narrowest resource-specific permissions and test both allowed and denied actions.
+
+Google Cloud human users and Google Groups are managed through Workspace or Cloud Identity. Cloud IAM grants roles to group principals through resource policy bindings.
+
+
 ## Cleanup
 Keep users and groups for Labs 02 and 03. Delete only identities and groups created specifically for this lab when the series is complete.
 
