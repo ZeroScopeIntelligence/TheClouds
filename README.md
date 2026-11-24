@@ -129,12 +129,18 @@ Build practical experience with Google Cloud services and cloud infrastructure.
 
 ## Learning Areas
 
+### Desktop Virtualization
+
+The [Virtual Machines guide](VirtualMachines/README.md) introduces local desktop hypervisors that can be used to prepare and test lab systems before connecting them to cloud environments. It covers Broadcom VMware Workstation Pro and Oracle VirtualBox, with setup considerations, virtual networking, snapshots, and safe lab practices.
+
+
 Labs and projects will be organized around these core topics:
 
 | Area | Focus |
 | --- | --- |
 | Cloud Fundamentals | Cloud concepts, service models, deployment models, regions, zones, and shared responsibility |
-| Compute | Virtual machines, instances, and workloads |
+| Compute | Cloud virtual machines, instances, and workloads | 
+| Desktop Virtualization | Local VM platforms using VMware Workstation Pro or Oracle VirtualBox |
 | Storage | Object, block, and file storage |
 | Networking | VPCs, virtual networks, subnets, routing, and firewalls |
 | Secure Remote Access (SSH) | SSH keys, Linux VM access, network restrictions, troubleshooting, and cleanup |
@@ -174,7 +180,9 @@ Each cloud platform has its own branch, keeping its labs, notes, and projects or
 TheClouds/
 ├── main
 │   ├── README.md
-│   └── LAB-CLEANUP-GUIDE.md
+│   ├── LAB-CLEANUP-GUIDE.md
+│   └── VirtualMachines/
+│       └── README.md
 ├── aws
 ├── azure
 └── google-cloud
