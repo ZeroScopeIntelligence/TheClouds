@@ -21,10 +21,10 @@ After account creation, verify the user's effective permissions and test that ac
 
 | Employee name | Suggested username | Security group | Department |
 | --- | --- | --- | --- |
-| James Wilson | `jwilson` | `Resource-Readers` | Finance |
-| Emily Carter | `ecarter` | `Resource-Readers` | Compliance |
-| Michael Rodriguez | `mrodriguez` | `Storage-Contributors` | IT |
-| Sophia Martinez | `smartinez` | `Storage-Contributors` | Development |
+| James Wilson | `jwilson` | `Resource Readers` | Finance |
+| Emily Carter | `ecarter` | `Resource Readers` | Compliance |
+| Michael Rodriguez | `mrodriguez` | `Storage Contributors` | IT |
+| Sophia Martinez | `smartinez` | `Storage Contributors` | Development |
 
 These are standard human user identities, not service principals or managed identities. Use your tenant's verified domain when creating each user's sign-in name; the usernames above are suggestions.
 
@@ -33,11 +33,13 @@ An authorized Entra tenant, permission to create users and groups, and permissio
 
 ## Steps: Create Groups
 
+Group display names can contain spaces. For this lab, use readable names such as `Resource Readers`, `Storage Contributors`, `HR Staff`, and `IT Department` rather than joining words with hyphens. In the Entra admin center, select **Entra ID** in the left navigation, then **Groups → All groups → New group**.
+
 1. Open [Microsoft Entra admin center](https://entra.microsoft.com/).
 2. Navigate to **Entra ID → Groups → All groups → New group**.
 3. Set group type to **Security** and membership type to **Assigned**.
-4. Create `Resource-Readers`.
-5. Repeat for `Storage-Contributors`.
+4. Create `Resource Readers`.
+5. Repeat for `Storage Contributors`.
 
 ## Alternative: Create a User Using the Entra Admin Center Search Bar
 
@@ -51,7 +53,7 @@ You can also start user creation from the admin center's search bar. In the curr
 6. Continue to the password section. Generate a unique initial password for this user that is at least **12 characters** and contains at least **one special character**, while meeting any stronger tenant requirements. Do not reuse a password from another account or put it in this repository. Deliver it securely and select the option to require the user to change the password at next sign-in when available.
 7. Select **Next: Properties** (or the equivalent next step). Enter the user's **First name** and **Last name**.
 8. Under **Job information**, enter the user's job title. Add department details if the lab or tenant uses them.
-9. Continue to **Assignments**. Add the user to the correct department security group that you created earlier (for example, an HR user to `HR-Readers` or `HR-Staff`). Do not assign extra directory roles or Azure resource permissions unless a later lab specifically requires them.
+9. Continue to **Assignments**. Add the user to the correct department security group that you created earlier (for example, an HR user to `HR Readers` or `HR Staff`). Do not assign extra directory roles or Azure resource permissions unless a later lab specifically requires them.
 10. Select **Next: Review + create**, check the username, display name, first and last name, job title, and group membership, then select **Create**.
 11. Open the new user record and verify the account and group membership. Repeat the process for each fictional employee, using a different username and unique initial password for every account.
 
@@ -62,8 +64,8 @@ You can also start user creation from the admin center's search bar. In the curr
 1. Navigate to **Entra ID → Users → All users → New user → Create new user**.
 2. Create James Wilson (`jwilson`), Emily Carter (`ecarter`), Michael Rodriguez (`mrodriguez`), and Sophia Martinez (`smartinez`). Set their display names and use sign-in names under your tenant's verified domain.
 3. Follow tenant password and sign-in requirements. Never place passwords in this repository.
-4. Open **Entra ID → Groups → All groups → Resource-Readers → Members → Add members** and add James Wilson and Emily Carter.
-5. Open **Entra ID → Groups → All groups → Storage-Contributors → Members → Add members** and add Michael Rodriguez and Sophia Martinez.
+4. Open **Entra ID → Groups → All groups → Resource Readers → Members → Add members** and add James Wilson and Emily Carter.
+5. Open **Entra ID → Groups → All groups → Storage Contributors → Members → Add members** and add Michael Rodriguez and Sophia Martinez.
 
 ## Validation
 Open each group and verify it contains the two intended members. No Azure resource role is assigned in this lab; that occurs in Lab 02.
@@ -78,18 +80,18 @@ Use this fictional roster to practice department-based identity administration. 
 
 | Employee | Username | Department | Group |
 |---|---|---|---|
-| Olivia Bennett | `obennett` | Human Resources | `HR-Readers` |
-| Ethan Brooks | `ebrooks` | Human Resources | `HR-Staff` |
-| Maya Patel | `mpatel` | Sales | `Sales-Users` |
-| Noah Thompson | `nthompson` | Sales | `Sales-Users` |
-| Ava Garcia | `agarcia` | Finance | `Finance-Readers` |
-| Liam Chen | `lchen` | Finance | `Finance-Analysts` |
-| Sophia Martinez | `smartinez` | IT | `IT-Operators` |
-| James Wilson | `jwilson` | IT | `IT-Auditors` |
-| Isabella Rivera | `irivera` | Development | `Dev-Engineers` |
-| Lucas Kim | `lkim` | Development | `Dev-Engineers` |
-| Mia Johnson | `mjohnson` | Support | `Support-Readers` |
-| Daniel Lewis | `dlewis` | Support | `Support-Operators` |
+| Olivia Bennett | `obennett` | Human Resources | `HR Readers` |
+| Ethan Brooks | `ebrooks` | Human Resources | `HR Staff` |
+| Maya Patel | `mpatel` | Sales | `Sales Users` |
+| Noah Thompson | `nthompson` | Sales | `Sales Users` |
+| Ava Garcia | `agarcia` | Finance | `Finance Readers` |
+| Liam Chen | `lchen` | Finance | `Finance Analysts` |
+| Sophia Martinez | `smartinez` | IT | `IT Operators` |
+| James Wilson | `jwilson` | IT | `IT Auditors` |
+| Isabella Rivera | `irivera` | Development | `Development Engineers` |
+| Lucas Kim | `lkim` | Development | `Development Engineers` |
+| Mia Johnson | `mjohnson` | Support | `Support Readers` |
+| Daniel Lewis | `dlewis` | Support | `Support Operators` |
 
 Create each distinct group in the table, create the 12 test users, and add each user to the group shown. Never store passwords, API keys, access keys, or tokens in this repository.
 
