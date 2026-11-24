@@ -38,12 +38,29 @@ You can create a group directly from the IAM console and add users while creatin
 4. Enter the group name. For this walkthrough, enter `IT`. Group names can contain spaces; use clear names that match the department or team's purpose.
 5. Under **Select users**, choose the existing IAM users who should belong to this group. You can skip this selection if you have not created the users yet and add them later.
 6. Under **Attach permissions policies**, find and select the policy for the lab.
-7. For a controlled permissions demonstration only, you may select **AdministratorAccess** to see how an administrator policy affects group members.
+7. Select only least-privilege policies for the group's purpose. For this lab, prefer **ReadOnlyAccess** plus a relevant service-specific access policy when needed. Do not select **AdministratorAccess**.
 8. Review the group name, selected users, and attached policy, then select **Create group**.
 
-**Important security warning:** `AdministratorAccess` grants broad administrative permissions across AWS. Use it only in a dedicated, disposable lab account with no production resources or sensitive data. Do not use it for a normal IT department group or real users. For realistic department access, leave this policy unselected and attach only narrowly scoped policies that the users need. The repository's default standard remains least privilege.
+**Important security rule:** Never attach **AdministratorAccess** to this group or assign full administrator permissions to an ordinary user. Use **ReadOnlyAccess** when read-only visibility is appropriate, and add only the specific service or resource access policy required for the user's duties. Review the permissions granted by every attached policy; broad read access can still expose sensitive data. The repository's default standard is least privilege.
 
 After the group is created, open **IAM → User groups → IT** and verify its members and attached policies. Group membership gives users the group's permissions, so review both before adding users.
+
+## Add or Change Permissions on an Existing IAM Group
+
+After creating a group, you can return to it later to attach additional policies:
+
+1. In the AWS Management Console, search for **IAM** and open the IAM service.
+2. Select **User groups** (or **IAM groups**) in the navigation pane.
+3. Select the group you want to update. For this walkthrough, open **IT**.
+4. Open the **Permissions** section or tab.
+5. Select **Add permissions**. A drop-down menu appears.
+6. Choose **Attach policies**.
+7. Search the available policies and select only the policies that match the group's responsibilities.
+8. For general read-only visibility, consider **ReadOnlyAccess**. Then add a suitable service-specific policy only when the group needs access to that service. For example, use a narrowly scoped S3 policy for an S3 task rather than granting broad permissions across AWS.
+9. Review the selected policies and choose **Add permissions** / **Attach policies** to apply them (the final button label may vary with the console view).
+10. Return to the group's **Permissions** section and verify the attached policies.
+
+**Least-privilege reminder:** Prefer read-only access plus a narrowly scoped service access policy where appropriate. Do not attach **AdministratorAccess** or give full administrator permissions to ordinary users. A group's attached policies apply to its members, so check the policy's actions and resource scope before attaching it. Remove policies that are no longer required.
 
 ## Create a User from the AWS Console Search Bar
 
