@@ -2,8 +2,8 @@
 
 | Group | Azure role | Scope / Purpose |
 | --- | --- | --- |
-| `ZS-Resource-Readers` | `Reader` | View management-plane resources in the lab resource group |
-| `ZS-Storage-Contributors` | `Storage Blob Data Contributor` | Read, write, and delete blob data in the test storage account |
+| `Resource-Readers` | `Reader` | View management-plane resources in the lab resource group |
+| `Storage-Contributors` | `Storage Blob Data Contributor` | Read, write, and delete blob data in the test storage account |
 
 ## Important Distinctions
 
