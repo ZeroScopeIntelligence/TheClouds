@@ -15,6 +15,7 @@ AWS IAM supports IAM users and IAM groups. Add users to groups, then attach iden
 | 01 | [Create users, groups, and membership](./LAB-01-users-and-groups.md) | Ready |
 | 02 | [Assign different policies or roles to groups](./LAB-02-group-permissions.md) | Ready |
 | 03 | [Test, audit, and clean up access](./LAB-03-test-and-cleanup.md) | Ready |
+| 04 | [Department-based identity directory](./LAB-04-department-directory.md) | Ready |
 
 ## Permission Design
 
@@ -22,6 +23,10 @@ AWS IAM supports IAM users and IAM groups. Add users to groups, then attach iden
 | --- | --- | --- |
 | Cloud-Audit-Readers | ReadOnlyAccess | Dedicated lab environment |
 | Cloud-S3-Operators | Custom S3 object policy | Dedicated test storage resource |
+
+## Troubleshooting
+
+See the [troubleshooting guide](../Troubleshooting/README.md) for permission errors, group membership, API credentials, and audit diagnostics.
 
 ## Safety Checklist
 
