@@ -10,7 +10,12 @@ The first learning track covers identity creation, groups, group membership, per
 - [Lab 01: Prepare users and groups](./IAM/LAB-01-users-and-groups.md)
 - [Lab 02: Assign different roles to groups](./IAM/LAB-02-group-permissions.md)
 - [Lab 03: Test, audit, and clean up access](./IAM/LAB-03-test-and-cleanup.md)
+- [Lab 04: Department-based identity directory](./IAM/LAB-04-department-directory.md)
 - [Policy and role reference](./IAM/POLICY-REFERENCE.md)
+
+## Troubleshooting
+
+- [Troubleshooting: permissions, credentials, and access](./Troubleshooting/README.md)
 
 ## Learning Areas
 - [Fundamentals](./Fundamentals/README.md)
