@@ -58,6 +58,13 @@ Cloud security is a shared responsibility between the cloud provider and the cus
 
 **Treat the lab account as disposable, but protect the credentials used to access it.** For account isolation and provider-specific setup, follow the official documentation linked below.
 
+## Remote Access: Always Use a VPN
+
+**Always connect to an approved, trusted VPN before remotely accessing cloud lab systems or administering a VM over SSH.** Connect to the VPN first, confirm the secure tunnel is active, and only then start the remote session. If the VPN is unavailable, do not make the remote connection; use an approved private-access method or wait until secure access is restored.
+
+A VPN is an additional protection layer—not a replacement for SSH key authentication, host-key verification, least-privilege access, or restrictive firewall rules. Keep SSH ingress limited to the VPN's known egress address or private network range where practical; never open port 22 to the entire internet. Avoid untrusted public Wi-Fi for administrative sessions.
+
+
 ---
 
 ## Cloud Platforms
