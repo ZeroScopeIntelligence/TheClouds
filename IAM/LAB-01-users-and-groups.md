@@ -39,6 +39,42 @@ Use these as display names and suggested usernames for ordinary human IAM users.
 
 These are disposable learning identities. For workforce access in real environments, study IAM Identity Center and federation. Never publish passwords, access keys, secret keys, or MFA recovery information.
 
+
+## Expanded fictional company directory
+
+Use this fictional roster to practice department-based identity administration. These are sample names and usernames only; check for naming conflicts and use your provider's required sign-in format.
+
+| Employee | Username | Department | Group |
+|---|---|---|---|
+| Olivia Bennett | `obennett` | Human Resources | `HR-Readers` |
+| Ethan Brooks | `ebrooks` | Human Resources | `HR-Staff` |
+| Maya Patel | `mpatel` | Sales | `Sales-Users` |
+| Noah Thompson | `nthompson` | Sales | `Sales-Users` |
+| Ava Garcia | `agarcia` | Finance | `Finance-Readers` |
+| Liam Chen | `lchen` | Finance | `Finance-Analysts` |
+| Sophia Martinez | `smartinez` | IT | `IT-Operators` |
+| James Wilson | `jwilson` | IT | `IT-Auditors` |
+| Isabella Rivera | `irivera` | Development | `Dev-Engineers` |
+| Lucas Kim | `lkim` | Development | `Dev-Engineers` |
+| Mia Johnson | `mjohnson` | Support | `Support-Readers` |
+| Daniel Lewis | `dlewis` | Support | `Support-Operators` |
+
+Create each distinct group in the table, create the 12 test users, and add each user to the group shown. Never store passwords, API keys, access keys, or tokens in this repository.
+
+### Suggested access boundaries
+
+- **HR:** access only to dedicated HR lab resources; do not grant access to real employee records.
+- **Sales:** application-specific access to a dedicated sales test resource.
+- **Finance:** read-only or analytics access to isolated finance test resources.
+- **IT:** separate operational and audit groups; audit membership must not imply administrative rights.
+- **Development:** permissions scoped to a dedicated development environment.
+- **Support:** diagnostic access limited to approved support resources.
+
+Do not attach broad administrator permissions to department groups. Apply the narrowest resource-specific permissions and test both allowed and denied actions.
+
+For workforce access in production, prefer IAM Identity Center and federation with temporary credentials over long-lived IAM users.
+
+
 ## Cleanup
 Keep the users and groups for Labs 02 and 03. Delete them when the exercise series is complete.
 
