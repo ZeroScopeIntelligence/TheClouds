@@ -171,17 +171,6 @@ Each lab should include its objective, prerequisites, setup steps, implementatio
 - Never commit passwords, API keys, access tokens, private keys, or other secrets to this repository.
 - Use these labs only in cloud accounts and environments you are authorized to manage.
 
-## Official Documentation
-
-- [AWS Documentation](https://docs.aws.amazon.com/)
-- [AWS account management](https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-creating.html)
-- [Microsoft Azure Documentation](https://learn.microsoft.com/azure/)
-- [Microsoft Entra tenant guidance](https://learn.microsoft.com/entra/fundamentals/create-new-tenant)
-- [Google Cloud Documentation](https://cloud.google.com/docs)
-- [Google Cloud resource management](https://cloud.google.com/resource-manager/docs/creating-managing-projects)
-
----
-
 ## About ZeroScope Solutions
 
 ZeroScope Solutions is a technology-focused initiative exploring cybersecurity, cloud infrastructure, networking, and emerging technologies through hands-on projects and research.
