@@ -28,6 +28,22 @@ After account creation, verify the user's effective permissions and test that ac
 
 Use these as display names and suggested usernames for ordinary human IAM users. Adapt usernames if they already exist in your AWS account. These are not IAM roles or service identities.
 
+## Create a User from the AWS Console Search Bar
+
+If you are using the AWS Management Console's search navigation, you can create a user this way:
+
+1. Sign in to the AWS Management Console with your authorized lab account. Do not use the root user for routine administration.
+2. Use the top **Search** bar to search for **IAM** and open the IAM service.
+3. In the IAM navigation pane, select **Users** (or **IAM users**, depending on the console view).
+4. Select **Create user** in the upper-right area of the Users page.
+5. Enter the new user's unique **User name**, then select **Next**.
+6. On the permissions step, choose **Add user to group** and select the existing group that matches the user's department or job duties. If the group has not been created yet, create it first under **IAM → User groups → Create group**.
+7. Select **Next**, review the user name and selected group, then select **Create user**.
+
+The user is now created and is a member of the selected group. Group membership alone does not grant access unless the group has permissions attached. Keep permissions least-privilege and add only the policies required by the lab.
+
+**Sign-in access note:** This flow creates the IAM user and assigns group membership. If a lab specifically requires AWS Management Console sign-in or programmatic access, configure only the required access method afterward and follow the lab's credential-handling and MFA requirements. Do not create access keys unless a task explicitly needs them, and never commit credentials to GitHub.
+
 ## Steps
 
 1. Sign in to the AWS Management Console using an authorized lab administrator. Do not use the root user for routine work.
