@@ -7,10 +7,10 @@ Create four ordinary cloud-only Microsoft Entra ID test users and two security g
 
 | Employee name | Suggested username | Security group | Department |
 | --- | --- | --- | --- |
-| James Wilson | `jwilson` | `ZS-Resource-Readers` | Finance |
-| Emily Carter | `ecarter` | `ZS-Resource-Readers` | Compliance |
-| Michael Rodriguez | `mrodriguez` | `ZS-Storage-Contributors` | IT |
-| Sophia Martinez | `smartinez` | `ZS-Storage-Contributors` | Development |
+| James Wilson | `jwilson` | `Resource-Readers` | Finance |
+| Emily Carter | `ecarter` | `Resource-Readers` | Compliance |
+| Michael Rodriguez | `mrodriguez` | `Storage-Contributors` | IT |
+| Sophia Martinez | `smartinez` | `Storage-Contributors` | Development |
 
 These are standard human user identities, not service principals or managed identities. Use your tenant's verified domain when creating each user's sign-in name; the usernames above are suggestions.
 
@@ -22,16 +22,16 @@ An authorized Entra tenant, permission to create users and groups, and permissio
 1. Open [Microsoft Entra admin center](https://entra.microsoft.com/).
 2. Navigate to **Identity → Groups → All groups → New group**.
 3. Set group type to **Security** and membership type to **Assigned**.
-4. Create `ZS-Resource-Readers`.
-5. Repeat for `ZS-Storage-Contributors`.
+4. Create `Resource-Readers`.
+5. Repeat for `Storage-Contributors`.
 
 ## Steps: Create Users
 
 1. Navigate to **Identity → Users → All users → New user → Create new user**.
 2. Create James Wilson (`jwilson`), Emily Carter (`ecarter`), Michael Rodriguez (`mrodriguez`), and Sophia Martinez (`smartinez`). Set their display names and use sign-in names under your tenant's verified domain.
 3. Follow tenant password and sign-in requirements. Never place passwords in this repository.
-4. Open **Groups → All groups → ZS-Resource-Readers → Members → Add members** and add James Wilson and Emily Carter.
-5. Open **ZS-Storage-Contributors → Members → Add members** and add Michael Rodriguez and Sophia Martinez.
+4. Open **Groups → All groups → Resource-Readers → Members → Add members** and add James Wilson and Emily Carter.
+5. Open **Storage-Contributors → Members → Add members** and add Michael Rodriguez and Sophia Martinez.
 
 ## Validation
 Open each group and verify it contains the two intended members. No Azure resource role is assigned in this lab; that occurs in Lab 02.
@@ -46,18 +46,18 @@ Use this fictional roster to practice department-based identity administration. 
 
 | Employee | Username | Department | Group |
 |---|---|---|---|
-| Olivia Bennett | `obennett` | Human Resources | `ZS-HR-Readers` |
-| Ethan Brooks | `ebrooks` | Human Resources | `ZS-HR-Staff` |
-| Maya Patel | `mpatel` | Sales | `ZS-Sales-Users` |
-| Noah Thompson | `nthompson` | Sales | `ZS-Sales-Users` |
-| Ava Garcia | `agarcia` | Finance | `ZS-Finance-Readers` |
-| Liam Chen | `lchen` | Finance | `ZS-Finance-Analysts` |
-| Sophia Martinez | `smartinez` | IT | `ZS-IT-Operators` |
-| James Wilson | `jwilson` | IT | `ZS-IT-Auditors` |
-| Isabella Rivera | `irivera` | Development | `ZS-Dev-Engineers` |
-| Lucas Kim | `lkim` | Development | `ZS-Dev-Engineers` |
-| Mia Johnson | `mjohnson` | Support | `ZS-Support-Readers` |
-| Daniel Lewis | `dlewis` | Support | `ZS-Support-Operators` |
+| Olivia Bennett | `obennett` | Human Resources | `HR-Readers` |
+| Ethan Brooks | `ebrooks` | Human Resources | `HR-Staff` |
+| Maya Patel | `mpatel` | Sales | `Sales-Users` |
+| Noah Thompson | `nthompson` | Sales | `Sales-Users` |
+| Ava Garcia | `agarcia` | Finance | `Finance-Readers` |
+| Liam Chen | `lchen` | Finance | `Finance-Analysts` |
+| Sophia Martinez | `smartinez` | IT | `IT-Operators` |
+| James Wilson | `jwilson` | IT | `IT-Auditors` |
+| Isabella Rivera | `irivera` | Development | `Dev-Engineers` |
+| Lucas Kim | `lkim` | Development | `Dev-Engineers` |
+| Mia Johnson | `mjohnson` | Support | `Support-Readers` |
+| Daniel Lewis | `dlewis` | Support | `Support-Operators` |
 
 Create each distinct group in the table, create the 12 test users, and add each user to the group shown. Never store passwords, API keys, access keys, or tokens in this repository.
 
