@@ -21,8 +21,8 @@ Microsoft Entra ID manages users and security groups. Azure RBAC assigns resourc
 
 | Group | Permission | Scope |
 | --- | --- | --- |
-| ZS-Resource-Readers | Reader | Dedicated lab resource group |
-| ZS-Storage-Contributors | Storage Blob Data Contributor | Dedicated test storage resource |
+| Resource-Readers | Reader | Dedicated lab resource group |
+| Storage-Contributors | Storage Blob Data Contributor | Dedicated test storage resource |
 
 ## Troubleshooting
 
