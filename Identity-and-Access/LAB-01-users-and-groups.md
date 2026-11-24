@@ -39,6 +39,24 @@ An authorized Entra tenant, permission to create users and groups, and permissio
 4. Create `Resource-Readers`.
 5. Repeat for `Storage-Contributors`.
 
+## Alternative: Create a User Using the Entra Admin Center Search Bar
+
+You can also start user creation from the admin center's search bar. The exact labels can vary slightly as the Microsoft Entra portal changes.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) with an authorized account.
+2. Use the portal **Search** bar to search for **Users** and open the Users page.
+3. Select **Add user**, then choose **Create new user**.
+4. In **User principal name**, enter the user's unique username (for example, `obennett`) and select your tenant's verified domain. This is the user's sign-in name.
+5. Edit the **Display name** so it shows the person's full name (for example, Olivia Bennett).
+6. Continue to the password section. Generate a unique initial password for this user that is at least **12 characters** and contains at least **one special character**, while meeting any stronger tenant requirements. Do not reuse a password from another account or put it in this repository. Deliver it securely and select the option to require the user to change the password at next sign-in when available.
+7. Select **Next: Properties** (or the equivalent next step). Enter the user's **First name** and **Last name**.
+8. Under **Job information**, enter the user's job title. Add department details if the lab or tenant uses them.
+9. Continue to **Assignments**. Add the user to the correct department security group that you created earlier (for example, an HR user to `HR-Readers` or `HR-Staff`). Do not assign extra directory roles or Azure resource permissions unless a later lab specifically requires them.
+10. Select **Next: Review + create**, check the username, display name, first and last name, job title, and group membership, then select **Create**.
+11. Open the new user record and verify the account and group membership. Repeat the process for each fictional employee, using a different username and unique initial password for every account.
+
+**Important:** The password is an initial sign-in credential, not a shared team password. Give it to the intended user through an approved secure method. The user should set their own password at first sign-in if the tenant supports that workflow.
+
 ## Steps: Create Users
 
 1. Navigate to **Identity → Users → All users → New user → Create new user**.
