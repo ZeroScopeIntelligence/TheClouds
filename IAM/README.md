@@ -13,6 +13,7 @@ Google Cloud IAM does not create ordinary human user accounts inside a project. 
 | 01 | [Prepare users, groups, and membership](./LAB-01-users-and-groups.md) | Ready |
 | 02 | [Assign different IAM roles to groups](./LAB-02-group-permissions.md) | Ready |
 | 03 | [Test, audit, and clean up access](./LAB-03-test-and-cleanup.md) | Ready |
+| 04 | [Department-based identity directory](./LAB-04-department-directory.md) | Ready |
 
 ## Permission Design
 
@@ -20,6 +21,10 @@ Google Cloud IAM does not create ordinary human user accounts inside a project. 
 | --- | --- | --- |
 | `cloud-project-viewers` | `roles/viewer` | Dedicated lab project |
 | `cloud-storage-operators` | `roles/storage.objectUser` | Dedicated test bucket |
+
+## Troubleshooting
+
+See the [troubleshooting guide](../Troubleshooting/README.md) for permission errors, group membership, API credentials, and audit diagnostics.
 
 ## Safety Checklist
 - Use disposable lab identities in a non-production environment.
