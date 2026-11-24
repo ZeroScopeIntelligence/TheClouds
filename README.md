@@ -115,6 +115,7 @@ Labs and projects will be organized around these core topics:
 | Compute | Virtual machines, instances, and workloads |
 | Storage | Object, block, and file storage |
 | Networking | VPCs, virtual networks, subnets, routing, and firewalls |
+| Secure Remote Access (SSH) | SSH keys, Linux VM access, network restrictions, troubleshooting, and cleanup |
 | Identity and Access Management | Users, roles, policies, and permissions |
 | Cloud Security | Secure configurations, access controls, and threat protection |
 | Monitoring and Logging | Metrics, logs, alerts, and auditing |
@@ -157,7 +158,7 @@ TheClouds/
 └── google-cloud
 ```
 
-Each lab should include its objective, prerequisites, setup steps, implementation, validation, cleanup instructions, and lessons learned.
+Each lab should include its objective, prerequisites, setup steps, implementation, validation, cleanup instructions, and lessons learned. The AWS, Azure, and Google Cloud branches each include a dedicated SSH learning path for securely accessing Linux virtual machines.
 
 ---
 
