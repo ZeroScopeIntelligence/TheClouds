@@ -30,12 +30,14 @@ Use these as display names and suggested usernames for ordinary human IAM users.
 
 ## Create an IAM Group from the AWS Console Search Bar
 
+**Group naming note:** Unlike Microsoft Entra ID display names, AWS IAM group names cannot contain spaces. Special characters are optional, not required. If a name containing a hyphen is unexpectedly rejected in the console, retype the standard keyboard hyphen (`-`) and check for accidental spaces or other unsupported characters. AWS documents hyphens as an allowed character.
+
 You can create a group directly from the IAM console and add users while creating it:
 
 1. In the AWS Management Console, use the top **Search** bar to search for **IAM**, then open the IAM service.
 2. In the IAM navigation pane, select **User groups** (sometimes shown as **IAM groups**).
 3. Select **Create group**.
-4. Enter the group name. For this walkthrough, enter `IT`. Group names can contain spaces; use clear names that match the department or team's purpose.
+4. Enter the group name. For this walkthrough, enter `IT`. AWS IAM group names do **not** require special characters; a simple name containing letters and numbers is valid. Group names cannot contain spaces. AWS allows up to 128 characters using letters, digits, and these optional characters: `+`, `=`, `,`, `.`, `@`, `_`, and `-`. Use a clear, unique name such as `IT`, `HR-Department`, or `Finance_Readers`.
 5. Under **Select users**, choose the existing IAM users who should belong to this group. You can skip this selection if you have not created the users yet and add them later.
 6. Under **Attach permissions policies**, find and select the policy for the lab.
 7. Select only least-privilege policies for the group's purpose. For this lab, prefer **ReadOnlyAccess** plus a relevant service-specific access policy when needed. Do not select **AdministratorAccess**.
