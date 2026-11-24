@@ -28,6 +28,23 @@ After account creation, verify the user's effective permissions and test that ac
 
 Use these as display names and suggested usernames for ordinary human IAM users. Adapt usernames if they already exist in your AWS account. These are not IAM roles or service identities.
 
+## Create an IAM Group from the AWS Console Search Bar
+
+You can create a group directly from the IAM console and add users while creating it:
+
+1. In the AWS Management Console, use the top **Search** bar to search for **IAM**, then open the IAM service.
+2. In the IAM navigation pane, select **User groups** (sometimes shown as **IAM groups**).
+3. Select **Create group**.
+4. Enter the group name. For this walkthrough, enter `IT`. Group names can contain spaces; use clear names that match the department or team's purpose.
+5. Under **Select users**, choose the existing IAM users who should belong to this group. You can skip this selection if you have not created the users yet and add them later.
+6. Under **Attach permissions policies**, find and select the policy for the lab.
+7. For a controlled permissions demonstration only, you may select **AdministratorAccess** to see how an administrator policy affects group members.
+8. Review the group name, selected users, and attached policy, then select **Create group**.
+
+**Important security warning:** `AdministratorAccess` grants broad administrative permissions across AWS. Use it only in a dedicated, disposable lab account with no production resources or sensitive data. Do not use it for a normal IT department group or real users. For realistic department access, leave this policy unselected and attach only narrowly scoped policies that the users need. The repository's default standard remains least privilege.
+
+After the group is created, open **IAM → User groups → IT** and verify its members and attached policies. Group membership gives users the group's permissions, so review both before adding users.
+
 ## Create a User from the AWS Console Search Bar
 
 If you are using the AWS Management Console's search navigation, you can create a user this way:
