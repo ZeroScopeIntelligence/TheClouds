@@ -97,7 +97,7 @@ Provider reference: [Official AWS SSH documentation](https://docs.aws.amazon.com
 6. Securely remove the lab's local private key if it is no longer needed. Never delete a key used by another environment.
 7. Check the provider resource inventory and billing dashboard for remaining resources.
 
-Follow the repository's [Cloud Lab Cleanup Guide](../LAB-CLEANUP-GUIDE.md) where available, or the main branch guide if the branch does not contain a copy.
+Follow the repository's [Cloud Lab Cleanup Guide](https://github.com/ZeroScopeIntelligence/TheClouds/blob/main/LAB-CLEANUP-GUIDE.md) where available, or the main branch guide if the branch does not contain a copy.
 
 ## Completion checklist
 
