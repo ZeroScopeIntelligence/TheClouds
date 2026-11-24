@@ -13,6 +13,11 @@ The first learning track covers identity creation, groups, group membership, per
 - [Lab 04: Department-based identity directory](./IAM/LAB-04-department-directory.md)
 - [Policy and role reference](./IAM/POLICY-REFERENCE.md)
 
+## SSH Labs
+
+- [SSH learning path](./SSH/README.md)
+- [Lab 01: Configure secure SSH access to a Linux VM](./SSH/LAB-01-secure-ssh-access.md)
+
 ## Troubleshooting
 
 - [Troubleshooting: permissions, credentials, and access](./Troubleshooting/README.md)
