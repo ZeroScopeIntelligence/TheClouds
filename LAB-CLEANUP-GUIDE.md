@@ -9,6 +9,13 @@ Use this checklist at the end of **every lab** in this repository.
 - [ ] Review pricing and configure budget or billing alerts where available.
 - [ ] Record the names, regions, resource groups, projects, and identifiers of resources you create. Do not record credentials or secrets.
 
+## Remote administration requirement
+
+- [ ] Before every remote connection to a lab VM or cloud environment, connect to an approved, trusted VPN and confirm that the VPN tunnel is active.
+- [ ] Keep the VPN connected for the full remote administration session. If it disconnects, end the remote session and restore the VPN before reconnecting.
+- [ ] Restrict SSH and management access to the VPN's known egress address or private network range where practical. A VPN does not replace SSH keys, host-key verification, least privilege, or firewall restrictions.
+- [ ] Disconnect the remote session before disconnecting the VPN. If no approved VPN is available, do not connect remotely.
+
 ## After completing the lab
 
 - [ ] Save sanitized notes and screenshots needed for the learning record.
