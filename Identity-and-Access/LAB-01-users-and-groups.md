@@ -34,17 +34,17 @@ An authorized Entra tenant, permission to create users and groups, and permissio
 ## Steps: Create Groups
 
 1. Open [Microsoft Entra admin center](https://entra.microsoft.com/).
-2. Navigate to **Identity → Groups → All groups → New group**.
+2. Navigate to **Entra ID → Groups → All groups → New group**.
 3. Set group type to **Security** and membership type to **Assigned**.
 4. Create `Resource-Readers`.
 5. Repeat for `Storage-Contributors`.
 
 ## Alternative: Create a User Using the Entra Admin Center Search Bar
 
-You can also start user creation from the admin center's search bar. The exact labels can vary slightly as the Microsoft Entra portal changes.
+You can also start user creation from the admin center's search bar. In the current portal navigation, users and groups are found under **Entra ID**. The exact labels can vary slightly as Microsoft updates the portal.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) with an authorized account.
-2. Use the portal **Search** bar to search for **Users** and open the Users page.
+2. Use the portal **Search** bar to search for **Users** and open **Entra ID → Users**.
 3. Select **Add user**, then choose **Create new user**.
 4. In **User principal name**, enter the user's unique username (for example, `obennett`) and select your tenant's verified domain. This is the user's sign-in name.
 5. Edit the **Display name** so it shows the person's full name (for example, Olivia Bennett).
@@ -59,11 +59,11 @@ You can also start user creation from the admin center's search bar. The exact l
 
 ## Steps: Create Users
 
-1. Navigate to **Identity → Users → All users → New user → Create new user**.
+1. Navigate to **Entra ID → Users → All users → New user → Create new user**.
 2. Create James Wilson (`jwilson`), Emily Carter (`ecarter`), Michael Rodriguez (`mrodriguez`), and Sophia Martinez (`smartinez`). Set their display names and use sign-in names under your tenant's verified domain.
 3. Follow tenant password and sign-in requirements. Never place passwords in this repository.
-4. Open **Groups → All groups → Resource-Readers → Members → Add members** and add James Wilson and Emily Carter.
-5. Open **Storage-Contributors → Members → Add members** and add Michael Rodriguez and Sophia Martinez.
+4. Open **Entra ID → Groups → All groups → Resource-Readers → Members → Add members** and add James Wilson and Emily Carter.
+5. Open **Entra ID → Groups → All groups → Storage-Contributors → Members → Add members** and add Michael Rodriguez and Sophia Martinez.
 
 ## Validation
 Open each group and verify it contains the two intended members. No Azure resource role is assigned in this lab; that occurs in Lab 02.
