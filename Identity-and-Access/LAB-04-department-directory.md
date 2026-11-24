@@ -8,18 +8,18 @@ Build a fictional company identity directory with HR, Sales, Finance, IT, Develo
 
 | Employee | Username | Department | Group |
 |---|---|---|---|
-| Olivia Bennett | `obennett` | Human Resources | `ZS-HR-Readers` |
-| Ethan Brooks | `ebrooks` | Human Resources | `ZS-HR-Staff` |
-| Maya Patel | `mpatel` | Sales | `ZS-Sales-Users` |
-| Noah Thompson | `nthompson` | Sales | `ZS-Sales-Users` |
-| Ava Garcia | `agarcia` | Finance | `ZS-Finance-Readers` |
-| Liam Chen | `lchen` | Finance | `ZS-Finance-Analysts` |
-| Sophia Martinez | `smartinez` | IT | `ZS-IT-Operators` |
-| James Wilson | `jwilson` | IT | `ZS-IT-Auditors` |
-| Isabella Rivera | `irivera` | Development | `ZS-Dev-Engineers` |
-| Lucas Kim | `lkim` | Development | `ZS-Dev-Engineers` |
-| Mia Johnson | `mjohnson` | Support | `ZS-Support-Readers` |
-| Daniel Lewis | `dlewis` | Support | `ZS-Support-Operators` |
+| Olivia Bennett | `obennett` | Human Resources | `HR-Readers` |
+| Ethan Brooks | `ebrooks` | Human Resources | `HR-Staff` |
+| Maya Patel | `mpatel` | Sales | `Sales-Users` |
+| Noah Thompson | `nthompson` | Sales | `Sales-Users` |
+| Ava Garcia | `agarcia` | Finance | `Finance-Readers` |
+| Liam Chen | `lchen` | Finance | `Finance-Analysts` |
+| Sophia Martinez | `smartinez` | IT | `IT-Operators` |
+| James Wilson | `jwilson` | IT | `IT-Auditors` |
+| Isabella Rivera | `irivera` | Development | `Dev-Engineers` |
+| Lucas Kim | `lkim` | Development | `Dev-Engineers` |
+| Mia Johnson | `mjohnson` | Support | `Support-Readers` |
+| Daniel Lewis | `dlewis` | Support | `Support-Operators` |
 
 ## Steps
 
