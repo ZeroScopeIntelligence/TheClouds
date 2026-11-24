@@ -14,6 +14,7 @@ Deploy or use a small Linux virtual machine in your dedicated lab environment, c
 
 ## Security requirements
 
+- **Always connect to an approved, trusted VPN before remotely accessing the VM.** Keep the VPN connected throughout the SSH session; if it disconnects, end the session and reconnect only after the VPN is restored.
 - Use SSH public-key authentication; do not enable password-based SSH just to make the lab easier.
 - Keep the private key on your own workstation. Never upload it to GitHub, paste it into chat, or share it.
 - Restrict inbound TCP port 22 to your current public IP address with a /32 source range, or use a private access option such as a provider bastion or IAP.
@@ -23,10 +24,11 @@ Deploy or use a small Linux virtual machine in your dedicated lab environment, c
 
 ## Part 1: Prepare the VM
 
-1. Create a small Linux VM in your lab environment using a supported distribution.
-2. Configure a network security rule that permits TCP port 22 only from your current public IP address.
-3. Configure the provider's supported SSH public-key method. Do not transfer the private key to the VM.
-4. Confirm the VM is running and note its public address, or the provider's private access method.
+1. Connect to your approved VPN and confirm the tunnel is active before beginning remote administration. If you cannot use the VPN, do not connect remotely.
+2. Create a small Linux VM in your lab environment using a supported distribution.
+3. Configure a network security rule that permits TCP port 22 only from your current public IP address.
+4. Configure the provider's supported SSH public-key method. Do not transfer the private key to the VM.
+5. Confirm the VM is running and note its public address, or the provider's private access method.
 
 ### Provider-specific notes
 
@@ -89,7 +91,7 @@ Provider reference: [Official AWS SSH documentation](https://docs.aws.amazon.com
 
 ## Part 6: Cleanup
 
-1. Exit the SSH session.
+1. Exit the SSH session, then disconnect the VPN after all remote administration is complete.
 2. Delete the VM if it was created only for this lab.
 3. Delete lab-only disks, snapshots, public IP addresses, network interfaces, and other attached resources after confirming they are not shared.
 4. Remove the temporary SSH public key, OS Login/IAM assignment, or other lab-only access configuration when no longer needed.
@@ -101,12 +103,14 @@ Follow the repository's [Cloud Lab Cleanup Guide](https://github.com/ZeroScopeIn
 
 ## Completion checklist
 
+- [ ] I connected through an approved VPN and kept it active throughout remote access.
 - [ ] SSH key-based authentication worked.
 - [ ] Port 22 was restricted to a trusted source or private access method.
 - [ ] I confirmed the VM identity after connecting.
 - [ ] I did not expose or commit private credentials.
 - [ ] I removed lab-only resources and temporary access.
 - [ ] I checked for remaining billable resources.
+- [ ] I ended the SSH session before disconnecting the VPN.
 
 ## Lab notes
 
