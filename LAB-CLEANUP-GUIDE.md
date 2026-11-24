@@ -35,6 +35,15 @@ Use this checklist at the end of **every lab** in this repository.
 - Store any required secrets in an approved secrets manager; do not put them in source code.
 - If a key or token is exposed, revoke it promptly and investigate its use. Rotating a key does not make an exposed old key safe; ensure the old credential is disabled or deleted.
 
+## Account creation and access review
+
+- [ ] Create a separate, uniquely named account for each person; never share usernames.
+- [ ] Grant only the minimum permissions required for the person's assigned lab task. Begin with no extra permissions and avoid broad administrator roles.
+- [ ] Set a unique password for each account: at least **12 characters** and at least **one special character**, or a stronger provider/organization requirement.
+- [ ] Enable MFA where supported, especially for privileged identities.
+- [ ] Verify effective permissions and remove temporary role assignments and accounts after the lab.
+- [ ] Store credentials in an approved password manager; never commit them to GitHub or lab notes.
+
 ## Provider reminders
 
 ### AWS
