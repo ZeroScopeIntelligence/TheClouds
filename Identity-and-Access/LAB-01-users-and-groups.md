@@ -39,6 +39,42 @@ Open each group and verify it contains the two intended members. No Azure resour
 ## Important Distinction
 Entra ID manages users and groups. Azure RBAC controls access to Azure resources. Creating a group does not automatically give it access to a subscription or resource.
 
+
+## Expanded fictional company directory
+
+Use this fictional roster to practice department-based identity administration. These are sample names and usernames only; check for naming conflicts and use your provider's required sign-in format.
+
+| Employee | Username | Department | Group |
+|---|---|---|---|
+| Olivia Bennett | `obennett` | Human Resources | `ZS-HR-Readers` |
+| Ethan Brooks | `ebrooks` | Human Resources | `ZS-HR-Staff` |
+| Maya Patel | `mpatel` | Sales | `ZS-Sales-Users` |
+| Noah Thompson | `nthompson` | Sales | `ZS-Sales-Users` |
+| Ava Garcia | `agarcia` | Finance | `ZS-Finance-Readers` |
+| Liam Chen | `lchen` | Finance | `ZS-Finance-Analysts` |
+| Sophia Martinez | `smartinez` | IT | `ZS-IT-Operators` |
+| James Wilson | `jwilson` | IT | `ZS-IT-Auditors` |
+| Isabella Rivera | `irivera` | Development | `ZS-Dev-Engineers` |
+| Lucas Kim | `lkim` | Development | `ZS-Dev-Engineers` |
+| Mia Johnson | `mjohnson` | Support | `ZS-Support-Readers` |
+| Daniel Lewis | `dlewis` | Support | `ZS-Support-Operators` |
+
+Create each distinct group in the table, create the 12 test users, and add each user to the group shown. Never store passwords, API keys, access keys, or tokens in this repository.
+
+### Suggested access boundaries
+
+- **HR:** access only to dedicated HR lab resources; do not grant access to real employee records.
+- **Sales:** application-specific access to a dedicated sales test resource.
+- **Finance:** read-only or analytics access to isolated finance test resources.
+- **IT:** separate operational and audit groups; audit membership must not imply administrative rights.
+- **Development:** permissions scoped to a dedicated development environment.
+- **Support:** diagnostic access limited to approved support resources.
+
+Do not attach broad administrator permissions to department groups. Apply the narrowest resource-specific permissions and test both allowed and denied actions.
+
+Entra groups organize identities; Azure RBAC role assignments grant access to Azure resources at a defined scope. Keep directory roles separate from resource roles.
+
+
 ## Cleanup
 Keep these test identities and groups for Labs 02 and 03. Remove them after the exercise if they are not used elsewhere.
 
