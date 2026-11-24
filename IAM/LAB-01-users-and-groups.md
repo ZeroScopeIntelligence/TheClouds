@@ -47,6 +47,29 @@ You can create a group directly from the IAM console and add users while creatin
 
 After the group is created, open **IAM → User groups → IT** and verify its members and attached policies. Group membership gives users the group's permissions, so review both before adding users.
 
+## Create an IAM Role in the AWS Console
+
+IAM roles are used to grant temporary permissions to a trusted entity, such as an AWS service, an AWS account, or an identity provider. Unlike an IAM user, a role is assumed when access is needed; it is not a permanent username and password.
+
+1. In the AWS Management Console, search for **IAM** and open the IAM service.
+2. In the IAM navigation pane, select **Roles**.
+3. Select **Create role**.
+4. Under **Trusted entity type**, choose the option that matches who or what needs to assume the role:
+   - **AWS service:** for an AWS service such as EC2 or Lambda that needs to access other AWS resources.
+   - **AWS account:** for a trusted principal in this AWS account or another AWS account.
+   - **Web identity:** for a workload authenticated through a supported external identity provider.
+   - **SAML 2.0 federation:** for users federating through a SAML identity provider.
+   - **Custom trust policy:** when you need to define the trust relationship directly and understand the policy.
+5. For this walkthrough, select **AWS account**, then choose **This account** if the trusted principal belongs to the current lab account. Do not select **Another AWS account** unless you are intentionally configuring cross-account access and know the account ID.
+6. Under **Options**, keep **Require MFA** enabled for human principals where supported. For third-party cross-account access, use **Require external ID** when appropriate and coordinate the unique external ID with the trusted third party. These controls serve different purposes.
+7. Select **Next**.
+8. Under **Add permissions**, search for and select only the policies required for the role's task. Prefer read-only or narrowly scoped service/resource policies. Do not attach **AdministratorAccess**.
+9. Select **Next**.
+10. Under **Name, review, and create**, enter a clear role name that describes its purpose, review the trusted entity and permissions, then select **Create role**.
+11. Open the new role and review its **Trust relationships** and **Permissions** tabs. Confirm that only the intended principal can assume it and that the attached policies grant only the required actions and resources.
+
+**Important:** The screenshot's **AWS account → This account** selection creates a role trusted by principals in the current account; it does not automatically make the role available to every user. A principal still needs permission to call `sts:AssumeRole`, and the role's trust policy must allow that principal. Keep MFA required for human role assumption where the use case supports it. Use service-specific trusted entities for AWS workloads rather than choosing an account trust relationship by default.
+
 ## Configure the AWS Account Password Policy
 
 You can set an account-wide password policy from IAM Account settings. This policy applies to IAM users in the AWS account.
