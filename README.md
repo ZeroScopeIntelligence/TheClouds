@@ -45,6 +45,21 @@ Cloud security is a shared responsibility between the cloud provider and the cus
 
 ---
 
+## Important: Use a Separate Cloud Lab Account
+
+**Do not use your primary personal or everyday cloud account for these exercises.** Create a separate, dedicated cloud account or isolated lab environment for learning. This keeps experiments, permissions, test users, API credentials, and billable resources away from your personal or production environment.
+
+- Use a dedicated lab account, tenant, or project as supported by the provider. Keep it separate from your primary account and any real business or production environment.
+- Follow the provider's age, identity-verification, billing, and account-creation requirements. Get the account owner's or parent/guardian's permission where required; never bypass provider requirements.
+- Set up billing alerts or budgets before creating resources. Alerts are not always hard spending limits, so continue checking actual usage.
+- Use fictional identities and test data only. Do not upload personal, confidential, or real customer information.
+- Use least-privilege access. Do not use your everyday administrator identity for routine lab work.
+- Never publish passwords, access keys, API keys, tokens, private keys, or connection strings in GitHub, screenshots, or notes.
+
+**Treat the lab account as disposable, but protect the credentials used to access it.** For account isolation and provider-specific setup, follow the official documentation linked below.
+
+---
+
 ## Cloud Platforms
 
 This repository uses separate branches to organize hands-on learning for each platform.
@@ -60,7 +75,7 @@ Learn and practice cloud services and infrastructure using AWS.
 - Monitoring and auditing: CloudWatch, CloudTrail
 - Security: security groups, network ACLs, and security best practices
 
-**Branch:** [aws](https://github.com/ZeroScopeIntelligence/ZeroScopeSolutionsCloudLabs/tree/aws)
+**Branch:** [aws](https://github.com/ZeroScopeIntelligence/TheClouds/tree/aws)
 
 ### Microsoft Azure
 
@@ -73,7 +88,7 @@ Explore Microsoft's cloud platform and its infrastructure and security services.
 - Monitoring: Azure Monitor
 - Security: Microsoft Defender for Cloud
 
-**Branch:** [azure](https://github.com/ZeroScopeIntelligence/ZeroScopeSolutionsCloudLabs/tree/azure)
+**Branch:** [azure](https://github.com/ZeroScopeIntelligence/TheClouds/tree/azure)
 
 ### Google Cloud Platform (GCP)
 
@@ -86,27 +101,9 @@ Build practical experience with Google Cloud services and cloud infrastructure.
 - Monitoring and logging: Cloud Monitoring and Cloud Logging
 - Security: Security Command Center and cloud security controls
 
-**Branch:** [google-cloud](https://github.com/ZeroScopeIntelligence/ZeroScopeSolutionsCloudLabs/tree/google-cloud)
+**Branch:** [google-cloud](https://github.com/ZeroScopeIntelligence/TheClouds/tree/google-cloud)
 
 ---
-
-## Shared IAM Practice Directory
-
-The IAM exercises across the AWS, Azure, and Google Cloud branches use the same sample employee directory so permissions can be compared consistently.
-
-| Employee name | Suggested username | Department | Access group |
-| --- | --- | --- | --- |
-| James Wilson | `jwilson` | Finance | Audit / resource readers |
-| Emily Carter | `ecarter` | Compliance | Audit / resource readers |
-| Michael Rodriguez | `mrodriguez` | IT | Storage operators |
-| Sophia Martinez | `smartinez` | Development | Storage operators |
-
-These are fictional training identities for documentation and lab practice. Create them only in cloud tenants or organizations you are authorized to manage, using usernames and email domains available in that environment. They are ordinary human users, not service accounts.
-
-The provider-specific group names are:
-- **AWS:** `Cloud-Audit-Readers` and `Cloud-S3-Operators`
-- **Azure:** `ZS-Resource-Readers` and `ZS-Storage-Contributors`
-- **Google Cloud:** `cloud-project-viewers` and `cloud-storage-operators`
 
 ## Learning Areas
 
@@ -126,46 +123,41 @@ Labs and projects will be organized around these core topics:
 
 ---
 
+## Lab Completion and Resource Cleanup
+
+**Every lab must include a cleanup step, and all resources created solely for that lab must be removed when the lab is complete.** This includes resources that can continue generating charges or expose access if left running.
+
+Before finishing a lab:
+
+1. Review the lab instructions and identify every resource created, changed, or assigned during the exercise.
+2. Export or save only the notes, screenshots, and sanitized results needed for your learning record. Do not save secrets or sensitive data in the repository.
+3. Delete lab-created resources that are no longer needed, such as virtual machines, disks, snapshots, storage buckets or containers, test databases, public IP addresses, load balancers, and temporary network components.
+4. Remove temporary IAM users, groups, role assignments, policies, service principals, service accounts, and test credentials created for the lab, where they are no longer needed.
+5. Revoke or delete lab-generated API keys, access keys, tokens, and other credentials. If a credential may have been exposed, revoke it and create a replacement only when needed.
+6. Check the provider's resource inventory, billing/cost dashboard, and activity or audit logs to confirm cleanup. Some services have dependencies or delayed deletion.
+7. Record the cleanup result in the lab notes.
+
+**Important:** Delete only resources created for the lab and confirmed to be safe to remove. Do not delete shared infrastructure, resources belonging to someone else, or the cloud account/tenant/project itself unless the lab explicitly requires it and you are authorized to do so. Some resources have retention, backup, or recovery requirements; review those before deletion.
+
+See [LAB-CLEANUP-GUIDE.md](LAB-CLEANUP-GUIDE.md) for the reusable cleanup checklist and provider-specific reminders. Every lab should link to or include its own cleanup instructions.
+
+---
+
 ## Repository Structure
 
 Each cloud platform has its own branch, keeping its labs, notes, and projects organized independently.
 
 ```text
-ZeroScopeSolutionsCloudLabs/
+TheClouds/
 ├── main
-│   └── README.md
-├── aws
 │   ├── README.md
-│   ├── LAB-TEMPLATE.md
-│   ├── NOTES.md
-│   ├── Fundamentals/
-│   ├── Compute/
-│   ├── Storage/
-│   ├── Networking/
-│   ├── IAM/
-│   ├── Security/
-│   ├── Monitoring-and-Logging/
-│   ├── Automation/
-│   └── Projects/
+│   └── LAB-CLEANUP-GUIDE.md
+├── aws
 ├── azure
-│   └── [Azure learning structure]
 └── google-cloud
-    └── [Google Cloud learning structure]
 ```
 
-Each lab will include its objective, prerequisites, setup steps, implementation, validation, screenshots or command output when useful, cleanup instructions, and lessons learned.
-
----
-
-## Lab Progress
-
-This is a growing, long-term learning repository. Labs will be added and updated as each topic is studied and practiced.
-
-| Platform | Branch | Status |
-| --- | --- | --- |
-| AWS | [aws](https://github.com/ZeroScopeIntelligence/ZeroScopeSolutionsCloudLabs/tree/aws) | Starter structure created |
-| Microsoft Azure | [azure](https://github.com/ZeroScopeIntelligence/ZeroScopeSolutionsCloudLabs/tree/azure) | Starter structure created |
-| Google Cloud | [google-cloud](https://github.com/ZeroScopeIntelligence/ZeroScopeSolutionsCloudLabs/tree/google-cloud) | Starter structure created |
+Each lab should include its objective, prerequisites, setup steps, implementation, validation, cleanup instructions, and lessons learned.
 
 ---
 
@@ -174,15 +166,19 @@ This is a growing, long-term learning repository. Labs will be added and updated
 - Follow each cloud provider's documentation and security recommendations.
 - Use least-privilege permissions when configuring identities and access.
 - Review pricing before deploying resources. Some cloud services can incur charges, even during experimentation.
-- Remove or shut down resources when they are no longer needed.
+- Use a separate, dedicated lab account or isolated environment—not your primary account.
+- Clean up lab-created resources and credentials after every lab.
 - Never commit passwords, API keys, access tokens, private keys, or other secrets to this repository.
 - Use these labs only in cloud accounts and environments you are authorized to manage.
 
 ## Official Documentation
 
 - [AWS Documentation](https://docs.aws.amazon.com/)
+- [AWS account management](https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-creating.html)
 - [Microsoft Azure Documentation](https://learn.microsoft.com/azure/)
+- [Microsoft Entra tenant guidance](https://learn.microsoft.com/entra/fundamentals/create-new-tenant)
 - [Google Cloud Documentation](https://cloud.google.com/docs)
+- [Google Cloud resource management](https://cloud.google.com/resource-manager/docs/creating-managing-projects)
 
 ---
 
