@@ -7,8 +7,8 @@ Assign different Azure resource roles to the Entra groups. One group gets read-o
 
 | Group | Role | Scope |
 | --- | --- | --- |
-| `ZS-Resource-Readers` | `Reader` | Dedicated lab resource group |
-| `ZS-Storage-Contributors` | `Storage Blob Data Contributor` | Dedicated test storage account |
+| `Resource-Readers` | `Reader` | Dedicated lab resource group |
+| `Storage-Contributors` | `Storage Blob Data Contributor` | Dedicated test storage account |
 
 ## Prerequisites
 Complete Lab 01. Have a dedicated resource group and test storage account. Your administrator must have permission to create role assignments at those scopes.
@@ -20,7 +20,7 @@ Complete Lab 01. Have a dedicated resource group and test storage account. Your 
 3. Open **Access control (IAM) → Add → Add role assignment**.
 4. Select the **Reader** role and choose **Next**.
 5. Under **Assign access to**, choose **User, group, or service principal**.
-6. Select **ZS-Resource-Readers** as the member.
+6. Select **Resource-Readers** as the member.
 7. Review the role and resource-group scope, then choose **Review + assign**.
 
 ## Part B: Assign Storage Blob Data Contributor
@@ -28,7 +28,7 @@ Complete Lab 01. Have a dedicated resource group and test storage account. Your 
 1. Navigate to the dedicated test storage account.
 2. Open **Access control (IAM) → Add → Add role assignment**.
 3. Select **Storage Blob Data Contributor** and choose **Next**.
-4. Choose **User, group, or service principal** and select `ZS-Storage-Contributors`.
+4. Choose **User, group, or service principal** and select `Storage-Contributors`.
 5. Confirm the scope is the test storage account, not the subscription.
 6. Choose **Review + assign**.
 
