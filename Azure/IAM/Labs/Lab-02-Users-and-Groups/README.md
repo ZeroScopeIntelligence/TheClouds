@@ -39,6 +39,15 @@ The following nine groups are represented in the Microsoft Entra admin center sc
 
 The email address is shown for the HR Microsoft 365 group in the reference screenshot. Email addresses and group availability can differ between tenants. Object IDs are intentionally not reproduced because they are tenant-specific identifiers.
 
+## Security groups vs. Microsoft 365 groups
+
+Both group types organize people, but they serve different purposes:
+
+- **Security groups** manage access control and permissions. They can also be used to assign licenses and target device policies, depending on the connected Microsoft services and configuration.
+- **Microsoft 365 groups** provide shared workspaces and collaboration tools across Microsoft 365 apps, such as shared resources for group members.
+
+Choose the group type based on the intended use. Use security groups when the goal is to manage access or target assignments. Use Microsoft 365 groups when members need a shared collaboration workspace.
+
 ### Group type reference
 
 - **Security:** Used to manage access to resources and assign permissions to a collection of users, devices, or service principals.
