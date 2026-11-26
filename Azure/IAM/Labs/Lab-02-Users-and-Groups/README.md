@@ -25,19 +25,19 @@ A fictional organization uses department and security-focused groups to organize
 
 The following nine groups are represented in the Microsoft Entra admin center screenshot used for this lab:
 
-| Group name | Group type | Membership type | Email |
-|---|---|---|---|
-| Administrators | Security | Assigned | — |
-| Finance | Security | Assigned | — |
-| Help Desk | Security | Assigned | — |
-| HR | Microsoft 365 | Assigned | HR@zeroscopeinteloutlook955.onmicrosoft.com |
-| IT | Security | Assigned | — |
-| Sales | Security | Assigned | — |
-| Security Admins | Security | Assigned | — |
-| Security Analysts | Security | Assigned | — |
-| Security Team | Security | Assigned | — |
+| Group name | Group type | Membership type |
+|---|---|---|
+| Administrators | Security | Assigned |
+| Finance | Security | Assigned |
+| Help Desk | Security | Assigned |
+| HR | Microsoft 365 | Assigned |
+| IT | Security | Assigned |
+| Sales | Security | Assigned |
+| Security Admins | Security | Assigned |
+| Security Analysts | Security | Assigned |
+| Security Team | Security | Assigned |
 
-The email address is shown for the HR Microsoft 365 group in the reference screenshot. Email addresses and group availability can differ between tenants. Object IDs are intentionally not reproduced because they are tenant-specific identifiers.
+Tenant-specific email addresses and object IDs are intentionally omitted from this example inventory.
 
 ## Security groups vs. Microsoft 365 groups
 
