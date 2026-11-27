@@ -18,9 +18,9 @@ Create a custom-mode VPC network with two subnets, review automatically created 
 | Component | Name | IPv4 range |
 | --- | --- | --- |
 | Project | Dedicated networking lab project | Your selected project |
-| VPC | zs-network-lab | Custom mode |
-| Subnet | zs-public-subnet | 10.30.1.0/24 |
-| Subnet | zs-private-subnet | 10.30.2.0/24 |
+| VPC | network-lab | Custom mode |
+| Subnet | public-subnet | 10.30.1.0/24 |
+| Subnet | private-subnet | 10.30.2.0/24 |
 | Region | Selected lab region | Same region for both subnets |
 
 No VM instances, external IP addresses, or Cloud NAT resources are required.
@@ -39,10 +39,10 @@ No VM instances, external IP addresses, or Cloud NAT resources are required.
 
 ### 2. Create a custom-mode VPC
 1. Select **VPC networks** > **Create VPC network**.
-2. Name it `zs-network-lab`.
+2. Name it `network-lab`.
 3. Select **Custom** subnet creation mode.
-4. Add `zs-public-subnet` with range `10.30.1.0/24` in your selected region.
-5. Add `zs-private-subnet` with range `10.30.2.0/24` in the same region.
+4. Add `public-subnet` with range `10.30.1.0/24` in your selected region.
+5. Add `private-subnet` with range `10.30.2.0/24` in the same region.
 6. Confirm the ranges do not overlap and create the network.
 
 ### 3. Review firewall rules
@@ -52,7 +52,7 @@ No VM instances, external IP addresses, or Cloud NAT resources are required.
 4. In a later VM lab, create narrowly scoped rules using specific targets, source ranges, protocols, and ports.
 
 ### 4. Review routes
-1. Open **Routes** and filter for `zs-network-lab`.
+1. Open **Routes** and filter for `network-lab`.
 2. Identify the subnet routes created for the VPC.
 3. Review the default internet route and its next hop, if present and applicable.
 4. A default route alone does not make a VM reachable from the internet. A VM generally needs an external IP for direct internet connectivity, and firewall rules must allow the traffic.
@@ -85,7 +85,7 @@ No VM instances, external IP addresses, or Cloud NAT resources are required.
 ## Cleanup
 1. Confirm the VPC contains no shared or production resources.
 2. Delete firewall rules created specifically for this lab, if any.
-3. Delete `zs-network-lab` and verify its subnets are removed.
+3. Delete `network-lab` and verify its subnets are removed.
 Do not delete shared or production resources.
 
 ## Lessons learned
