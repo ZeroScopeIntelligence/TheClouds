@@ -17,12 +17,12 @@ Create an Azure Virtual Network (VNet) with two non-overlapping subnets, apply N
 
 | Component | Name | IPv4 range |
 | --- | --- | --- |
-| Resource group | rg-zs-network-lab | Selected region |
-| VNet | vnet-zs-network-lab | 10.20.0.0/16 |
+| Resource group | rg-network-lab | Selected region |
+| VNet | vnet-network-lab | 10.20.0.0/16 |
 | Front-end subnet | snet-public | 10.20.1.0/24 |
 | Private subnet | snet-private | 10.20.2.0/24 |
-| NSG | nsg-zs-public | Associate with snet-public |
-| NSG | nsg-zs-private | Associate with snet-private |
+| NSG | nsg-public | Associate with snet-public |
+| NSG | nsg-private | Associate with snet-private |
 
 The labels public and private describe the intended design, not an automatic Azure subnet property. No VMs or public IP addresses are required.
 
@@ -34,13 +34,13 @@ The labels public and private describe the intended design, not an automatic Azu
 
 ### 1. Create a resource group
 1. In the Azure portal, open **Resource groups** > **Create**.
-2. Name it `rg-zs-network-lab`.
+2. Name it `rg-network-lab`.
 3. Select an available region and create it.
 
 ### 2. Create the VNet and subnets
 1. Open **Virtual networks** > **Create**.
-2. Select `rg-zs-network-lab` and the same region.
-3. Name the VNet `vnet-zs-network-lab`.
+2. Select `rg-network-lab` and the same region.
+3. Name the VNet `vnet-network-lab`.
 4. Set IPv4 address space to `10.20.0.0/16`.
 5. Add `snet-public` with `10.20.1.0/24`.
 6. Add `snet-private` with `10.20.2.0/24`.
@@ -48,13 +48,13 @@ The labels public and private describe the intended design, not an automatic Azu
 
 ### 3. Create and associate the front-end NSG
 1. Open **Network security groups** > **Create**.
-2. Name it `nsg-zs-public` in the same resource group and region.
+2. Name it `nsg-public` in the same resource group and region.
 3. Review default inbound and outbound rules.
 4. Do not add broad inbound allow rules. For this configuration-only lab, retain the default inbound protections.
 5. Associate the NSG with `snet-public` using the NSG's **Subnets** page or subnet configuration.
 
 ### 4. Create and associate the private NSG
-1. Create `nsg-zs-private`.
+1. Create `nsg-private`.
 2. Review its default rules and associate it with `snet-private`.
 3. Note how NSG rules are evaluated by priority and how stateful connections are handled.
 
@@ -72,7 +72,7 @@ The labels public and private describe the intended design, not an automatic Azu
 - Avoid inbound management access from the entire internet.
 
 ## Validation checklist
-- [ ] Resource group is `rg-zs-network-lab`.
+- [ ] Resource group is `rg-network-lab`.
 - [ ] VNet address space is `10.20.0.0/16`.
 - [ ] Both subnets exist and do not overlap.
 - [ ] Each subnet has the intended NSG association.
@@ -89,7 +89,7 @@ The labels public and private describe the intended design, not an automatic Azu
 | Route differs from expectation | Review system routes and any associated user-defined route table. |
 
 ## Cleanup
-1. Confirm `rg-zs-network-lab` contains only resources created for this exercise.
+1. Confirm `rg-network-lab` contains only resources created for this exercise.
 2. Delete the resource group and wait for deletion to complete.
 3. Verify the subscription resource list contains no remaining lab resources.
 Do not delete shared or production resources.
