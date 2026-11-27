@@ -15,11 +15,11 @@ Create an isolated Amazon VPC, divide it into public and private subnets, and co
 
 | Component | Name | IPv4 range / route |
 | --- | --- | --- |
-| VPC | zs-network-lab | 10.10.0.0/16 |
-| Public subnet | zs-public-subnet | 10.10.1.0/24 |
-| Private subnet | zs-private-subnet | 10.10.2.0/24 |
-| Public route table | zs-public-rt | VPC local route; 0.0.0.0/0 to IGW |
-| Private route table | zs-private-rt | VPC local route only |
+| VPC | network-lab | 10.10.0.0/16 |
+| Public subnet | public-subnet | 10.10.1.0/24 |
+| Private subnet | private-subnet | 10.10.2.0/24 |
+| Public route table | public-rt | VPC local route; 0.0.0.0/0 to IGW |
+| Private route table | private-rt | VPC local route only |
 
 AWS reserves five IPv4 addresses in each subnet, so the usable host count is lower than the total address count.
 
@@ -33,30 +33,30 @@ AWS reserves five IPv4 addresses in each subnet, so the usable host count is low
 ### 1. Create the VPC
 1. Open **VPC** in the AWS Management Console, then **Your VPCs** > **Create VPC**.
 2. Choose **VPC only**.
-3. Name it `zs-network-lab` and set IPv4 CIDR to `10.10.0.0/16`.
+3. Name it `network-lab` and set IPv4 CIDR to `10.10.0.0/16`.
 4. Keep IPv6 disabled for this introductory exercise and create the VPC.
 
 ### 2. Create the subnets
-1. Open **Subnets** > **Create subnet** and select `zs-network-lab`.
-2. Create `zs-public-subnet` with `10.10.1.0/24`.
-3. Create `zs-private-subnet` with `10.10.2.0/24`.
+1. Open **Subnets** > **Create subnet** and select `network-lab`.
+2. Create `public-subnet` with `10.10.1.0/24`.
+3. Create `private-subnet` with `10.10.2.0/24`.
 4. Select an Availability Zone for each. Confirm both ranges are inside the VPC and do not overlap.
 
 ### 3. Create and attach an internet gateway
 1. Open **Internet gateways** > **Create internet gateway**.
-2. Name it `zs-network-lab-igw`.
+2. Name it `network-lab-igw`.
 3. Select it and choose **Attach to a VPC**.
-4. Attach it to `zs-network-lab`.
+4. Attach it to `network-lab`.
 
 ### 4. Configure the public route table
-1. Create a route table named `zs-public-rt` in `zs-network-lab`.
+1. Create a route table named `public-rt` in `network-lab`.
 2. Add route `0.0.0.0/0` with the internet gateway as its target.
-3. Associate the route table with `zs-public-subnet`.
+3. Associate the route table with `public-subnet`.
 4. Confirm the VPC-local route remains present.
 
 ### 5. Configure the private route table
-1. Create `zs-private-rt` in `zs-network-lab`.
-2. Associate it with `zs-private-subnet`.
+1. Create `private-rt` in `network-lab`.
+2. Associate it with `private-subnet`.
 3. Leave the VPC-local route in place. Do not add a default route to the IGW or create a NAT gateway.
 
 ### 6. Understand the result
