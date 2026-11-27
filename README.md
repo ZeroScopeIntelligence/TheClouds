@@ -27,7 +27,6 @@ The first learning track covers identity creation, groups, group membership, per
 - [Fundamentals](./Fundamentals/README.md)
 - [Compute](./Compute/README.md)
 - [Storage](./Storage/README.md)
-- [Networking](./Networking/README.md)
 - [Identity and Access](./Identity-and-Access/README.md)
 - [Security](./Security/README.md)
 - [Monitoring and Logging](./Monitoring-and-Logging/README.md)
